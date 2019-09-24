@@ -1,7 +1,7 @@
-Setext style title with an `id` attribute {#idTitle1}
+First level header with `id` attribute {#idTitle1}
 ===========================================
 
-## atx style title with `id` attribute ## {#idTitre2}
+## Second level header with `id` attribute ## {#idTitre2}
 
 Underline bars no longer generate an emphasis inside a word:
 
