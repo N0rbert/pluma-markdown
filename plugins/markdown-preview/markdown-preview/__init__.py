@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# HTML preview of Markdown formatted text in gedit
+# HTML preview of Markdown formatted text in pluma
 # Copyright © 2005, 2006 Michele Campeotto
 # Copyright © 2009 Jean-Philippe Fleury <contact@jpfleury.net>
 
@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Gdk, Gtk, Gedit, GObject, WebKit
+from gi.repository import Gdk, Gtk, Pluma, Peas, GObject, WebKit
 import codecs
 import os
 import sys
@@ -56,8 +56,8 @@ except ImportError:
 else:
 	xdgConfigHome = xdg.BaseDirectory.xdg_config_home
 
-confDir =  os.path.join(xdgConfigHome, "gedit")
-confFile =  os.path.join(confDir, "gedit-markdown.ini")
+confDir =  os.path.join(xdgConfigHome, "pluma")
+confFile =  os.path.join(confDir, "pluma-markdown.ini")
 
 parser = SafeConfigParser()
 parser.optionxform = str
@@ -84,9 +84,10 @@ if not os.path.exists(confDir):
 with open(confFile, "w") as confFile:
 	parser.write(confFile)
 
-class MarkdownPreviewPlugin(GObject.Object, Gedit.WindowActivatable):
+class MarkdownPreviewPlugin(GObject.Object, Peas.Activatable):
 	__gtype_name__ = "MarkdownPreviewPlugin"
-	window = GObject.property(type=Gedit.Window)
+	#window = GObject.property(type=Gedit.Window)
+	object = GObject.Property(type=GObject.Object)
 	currentUri = ""
 	overLinkUrl = ""
 	
@@ -94,6 +95,7 @@ class MarkdownPreviewPlugin(GObject.Object, Gedit.WindowActivatable):
 		GObject.Object.__init__(self)
 	
 	def do_activate(self):
+		self.window = self.object
 		self.scrolledWindow = Gtk.ScrolledWindow()
 		self.scrolledWindow.set_property("hscrollbar-policy", Gtk.PolicyType.AUTOMATIC)
 		self.scrolledWindow.set_property("vscrollbar-policy", Gtk.PolicyType.AUTOMATIC)
@@ -136,7 +138,7 @@ class MarkdownPreviewPlugin(GObject.Object, Gedit.WindowActivatable):
 		image = Gtk.Image()
 		image.set_from_icon_name("gnome-mime-text-html", Gtk.IconSize.MENU)
 		
-		panel.add_item(self.scrolledWindow, "MarkdownPreview", _("Markdown Preview"), image)
+		panel.add_item(self.scrolledWindow, "MarkdownPreview", image)
 		panel.show()
 		panel.activate_item(self.scrolledWindow)
 	
