@@ -1,66 +1,65 @@
-Titre de niveau 1 (style Setext)
+First level (style Setext)
 ================================
 
-## Titre de niveau 2 (style atx)
+## Second level header
 
-### Titre de niveau 3 (style atx) ###
+### Third level header ###
 
-Il est possible d'utiliser une *emphase légère* ou une **emphase forte**. Continuons avec un retour à la ligne  
-forcé. Voici maintenant du `code en ligne`. On peut également échapper des caractères, par exemple \`ceci n'est pas du code, car les accents graves sont échappés\`.
+It is possible to use *italic* and **bold**. The monospaced inline code is also supported - `code in line`. But you can escape it too: \`not code in a line\`.
 
-N'oublions pas que du <strong>code HTML</strong> peut être inséré directement dans un document Markdown.
+HTML tags are also supported - <strong>code HTML in bold</strong> inside Markdown document.
 
-Voici à présent une liste non ordonnée:
+Below is the list with three items:
 
-- Item de liste non ordonnée créé avec le symbole `-`
-+ Item de liste non ordonnée créé avec le symbole `+`
-* Item de liste non ordonnée créé avec le symbole `*`
+- Unnumbered list item labeled with `-`
++ Unnumbered list item labeled with `+`
+* Unnumbered list item labeled with `*`
 
-Pour sa part, une liste ordonnée ressemble à ceci:
+The numbered list is below:
 
-1. Item de liste ordonnée
+1. First
 
-2. Item de liste ordonnée contenant un bloc de code:
+2. Second
 
-		<em>Code HTML</em> affiché
-		<strong>sans être interprété</strong>.
+		<em>Code HTML</em> in html
+		<strong>strong</strong>.
 
-3. Item de liste ordonnée continuant sur un autre paragraphe:
+3. List item with text paragraph
 
-	Suite de l'item.
+	The paragraph.
 
-Un autre élément qui peut être utilisé est la citation:
+Citation block:
 
-> Voici une citation, un peu comme dans les **courriels**.
->> On peut également ajouter *plusieurs niveaux de citation*.
+> First level with **bold**.
+>> Second level with *italic*.
 
-Ajoutons des lignes horizontales:
+Horizontal lines:
 
 ----------
 ** ** ** ** **
 __  __  __  __  __
 
-Les liens ont aussi leur syntaxe:
+The links also have their syntax:
 
-- Lien automatique: <https://github.com/jpfleury/gedit-markdown>
+- Automatic link: <https://github.com/N0rbert/pluma-markdown>
 
-- Lien incorporé au texte: le logiciel [gedit-markdown](https://github.com/jpfleury/gedit-markdown "Attribut title optionnel") permet d'ajouter le support du langage Markdown dans l'éditeur de texte gedit.
+- Embedded link to the text: The software [pluma-markdown](https://github.com/N0rbert/pluma-markdown "optional title attribute") allows you to add Markdown language support in the pluma text editor.
 
-- Lien par référence: le logiciel [gedit-markdown][1] permet entre autres d'utiliser la coloration syntaxique du Markdown dans gedit.
+- Link by reference: the [pluma-markdown][1] software makes it possible, among other things, to use the syntax highlighting of Markdown in pluma.
 
-- Autre lien par référence: le logiciel [gedit-markdown] permet entre autres d'utiliser la coloration syntaxique du Markdown dans gedit.
+- Other link by reference: the software [pluma-markdown] allows among other things to use the Markdown syntax highlighting in pluma.
 
-Il ne faudrait pas oublier les images:
+We should not forget the images:
 
-- Image incorporée au texte: le logo de Wikipédia est ![Wikipedia](http://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia-logo-v2-fr.png)
+- Image embedded in the text: the logo of Wikipedia is ![Wikipedia](http://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia-logo-v2-fr.png)
 
-- Image par référence: le logo de Wikipédia est ![Wikipedia][logo wikipedia]
+- Image by reference: the logo of Wikipedia is ![Wikipedia][logo wikipedia]
 
-Les liens par référence créés un peu plus haut peuvent être définis n'importe où dans le texte, par exemple ici:
+The links by reference created a little higher can be defined anywhere in the text, for example here:
 
-[1]: https://github.com/jpfleury/gedit-markdown
-[gedit-markdown]: https://github.com/jpfleury/gedit-markdown
+[1]: https://github.com/N0rbert/pluma-markdown
+[pluma-markdown]: https://github.com/N0rbert/pluma-markdown
 
-Même chose en ce qui concerne l'image par référence:
+Same thing as regards the image by reference:
 
-[logo wikipedia]: http://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia-logo-v2-fr.png "Attribut title optionnel"
+[logo wikipedia]: http://upload.wikimedia.org/wikipedia/commons/5/5a/Wikipedia-logo-v2-fr.png "Optional title attribute"
