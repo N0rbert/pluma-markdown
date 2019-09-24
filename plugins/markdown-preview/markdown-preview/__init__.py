@@ -379,7 +379,7 @@ class MarkdownPreviewPlugin(GObject.Object, Peas.Activatable):
 				start = doc.get_iter_at_mark(doc.get_insert())
 				end = doc.get_iter_at_mark(doc.get_selection_bound())
 			
-			text = doc.get_text(start, end, True)
+			text = unicode(doc.get_text(start, end, True), 'utf-8')
 			
 			if markdownVersion == "standard":
 				html = htmlTemplate % (markdown.markdown(text, smart_emphasis=False), )
