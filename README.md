@@ -22,7 +22,7 @@ Specifically, it adds:
 [Markdown]: http://daringfireball.net/projects/markdown/
 [Markdown Extra]: http://michelf.com/projects/php-markdown/extra/
 
-<img src="https://raw.githubusercontent.com/jpfleury/gedit-markdown/master/doc/exemple1.png" width="684" height="779" alt="Default Markdown syntax highlighting in gedit." />
+<img src="https://github.com/N0rbert/pluma-markdown/raw/master/doc/example1.png" width="100%" alt="Default Markdown syntax highlighting in pluma." />
 
 ## Requirements
 
@@ -30,7 +30,9 @@ Specifically, it adds:
 
 - The plugin *Markdown Preview* depends on the package `python-markdown`.
 
-- For users of Ubuntu (and maybe other distributions) 18.04 LTS, the packages `gir1.2-webkit-3.0 python-configparser` must be installed to use the plugin *Markdown Preview*.
+- For users of Ubuntu (and maybe other distributions) 18.04 LTS, the packages `gir1.2-webkit-3.0 python-configparser` must be installed to use the plugin *Markdown Preview*. 
+
+Simply install all needed stuff with `sudo apt-get install python-markdown gir1.2-webkit-3.0 python-configparser`.
 
 ## Installation (or update)
 
@@ -42,7 +44,7 @@ Specifically, it adds:
 
 - Run the installer in the terminal:
 
-		./gedit-markdown.sh install
+		./pluma-markdown.sh install
 
 Or programmatically:
 
