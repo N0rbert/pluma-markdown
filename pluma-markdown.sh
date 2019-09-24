@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This file is part of gedit-markdown.
+# This file is part of pluma-markdown.
 # Author: Jean-Philippe Fleury <contact@jpfleury.net>
 # Copyright © 2009 Jean-Philippe Fleury
 
@@ -94,34 +94,34 @@ normal=$(tput sgr0)
 
 if [[ -n $XDG_DATA_HOME ]]; then
 	cheminLanguageSpecs=$XDG_DATA_HOME/gtksourceview-3.0/language-specs
-	cheminPlugins=$XDG_DATA_HOME/gedit/plugins
-	cheminPluginsMarkdownPreview=$XDG_DATA_HOME/gedit/plugins/markdown-preview
+	cheminPlugins=$XDG_DATA_HOME/pluma/plugins
+	cheminPluginsMarkdownPreview=$XDG_DATA_HOME/pluma/plugins/markdown-preview
 	cheminStyles=$XDG_DATA_HOME/gtksourceview-3.0/styles
 else
 	cheminLanguageSpecs=$HOME/.local/share/gtksourceview-3.0/language-specs
-	cheminPlugins=$HOME/.local/share/gedit/plugins
-	cheminPluginsMarkdownPreview=$HOME/.local/share/gedit/plugins/markdown-preview
+	cheminPlugins=$HOME/.local/share/pluma/plugins
+	cheminPluginsMarkdownPreview=$HOME/.local/share/pluma/plugins/markdown-preview
 	cheminStyles=$HOME/.local/share/gtksourceview-3.0/styles
 fi
 
 cheminSystemeLanguageSpecs=/usr/share/gtksourceview-3.0/language-specs
-cheminSystemeSnippets=/usr/share/gedit/plugins/snippets
+cheminSystemeSnippets=/usr/share/pluma/plugins/snippets
 
 if [[ -n $XDG_CONFIG_HOME ]]; then
-	cheminSnippets=$XDG_CONFIG_HOME/gedit/snippets
-	cheminTools=$XDG_CONFIG_HOME/gedit/tools
+	cheminSnippets=$XDG_CONFIG_HOME/pluma/snippets
+	cheminTools=$XDG_CONFIG_HOME/pluma/tools
 else
-	cheminSnippets=$HOME/.config/gedit/snippets
-	cheminTools=$HOME/.config/gedit/tools
+	cheminSnippets=$HOME/.config/pluma/snippets
+	cheminTools=$HOME/.config/pluma/tools
 fi
 
 if [[ -n $XDG_CONFIG_HOME ]]; then
-	cheminConfig=$XDG_CONFIG_HOME/gedit
+	cheminConfig=$XDG_CONFIG_HOME/pluma
 else
-	cheminConfig=$HOME/.config/gedit
+	cheminConfig=$HOME/.config/pluma
 fi
 
-cheminFichierConfig=$cheminConfig/gedit-markdown.ini
+cheminFichierConfig=$cheminConfig/pluma-markdown.ini
 
 ####################################
 ## Fichiers à supprimer.
@@ -130,7 +130,7 @@ cheminFichierConfig=$cheminConfig/gedit-markdown.ini
 fichiersAsupprimer=(
 	"$cheminLanguageSpecs/markdown.lang"
 	"$cheminLanguageSpecs/markdown-extra.lang"
-	"$cheminPlugins/markdown-preview.gedit-plugin"
+	"$cheminPlugins/markdown-preview.pluma-plugin"
 	"$cheminSnippets/markdown.xml"
 	"$cheminSnippets/markdown-extra.xml"
 	"$cheminStyles/classic-markdown.xml"
@@ -148,7 +148,7 @@ cd "$(dirname "$0")"
 if [[ $1 == install ]]; then
 	echo "############################################################"
 	echo "##"
-	echo "## Installation of gedit-markdown"
+	echo "## Installation of pluma-markdown"
 	echo "##"
 	echo "############################################################"
 	echo
@@ -160,7 +160,7 @@ if [[ $1 == install ]]; then
 		"$cheminStyles"
 	
 	# Copie des fichiers.
-	cp -v config/gedit-markdown.ini "$cheminFichierConfig"
+	cp -v config/pluma-markdown.ini "$cheminFichierConfig"
 	cp -v language-specs/markdown-extra.lang "$cheminLanguageSpecs"
 	cheminLanguageSpecsMarkdownLang=$cheminLanguageSpecs/markdown-extra.lang
 	cp -v snippets/markdown-extra.xml "$cheminSnippets"
@@ -178,20 +178,20 @@ if [[ $1 == install ]]; then
 	cp -v styles/classic-markdown.xml "$cheminStyles"
 	
 	echo "$gras"
-	echo "Installation successful. Please restart gedit (if it's already running)."
+	echo "Installation successful. Please restart pluma (if it's already running)."
 	echo "$normal"
 	
 	exit 0
 elif [[ $1 == uninstall ]]; then
 	echo "############################################################"
 	echo "##"
-	echo "## Uninstallation of gedit-markdown"
+	echo "## Uninstallation of pluma-markdown"
 	echo "##"
 	echo "############################################################"
 	echo
 	supprimerGreffon
 	echo "$gras"
-	echo "Uninstallation successful. Please restart gedit (if it's already running)."
+	echo "Uninstallation successful. Please restart pluma (if it's already running)."
 	echo "$normal"
 	
 	exit 0
