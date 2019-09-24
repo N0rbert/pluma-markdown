@@ -1,50 +1,51 @@
-Titre de style Setext avec un attribut `id` {#idTitre1}
+Setext style title with an `id` attribute {#idTitle1}
 ===========================================
 
-## Titre de style atx avec un attribut `id` ## {#idTitre2}
+## atx style title with `id` attribute ## {#idTitre2}
 
-Les barres de soulignement ne génèrent plus d'emphase à l'intérieur d'un mot:
+Underline bars no longer generate an emphasis inside a word:
 
-- Le nom du fichier est «mon_fichier_texte.txt».
-- Le nom du fichier est «mon__fichier__texte.txt».
+- The name of the file is "my_text_file.txt".
+- The file name is "my__text_text.txt".
 
-Pour les autres contextes, l'emphase est encore générée:
+For the other contexts, the emphasis is still generated:
 
-- J'utilise _Markdown Extra_.
-- J'utilise __Markdown Extra__.
+- I use _Markdown Extra_.
+- I use __Markdown Extra__.
 
-Voici une liste de définitions:
+Here is a list of definitions:
 
-Mot 1
-: définition
-Mot 2
-: définition
+Word 1
+: definition
 
-Voici maintenant un bloc de code balisé:
+Word 2
+: definition
+
+Here is a block of marked code:
 
 ~~~
-<em>Code HTML</em> affiché
-<strong>sans être interprété</strong>.
+<em> HTML code </em> displayed
+<strong> without interpretation </strong>.
 ~~~
 
-Markdown Extra permet de préciser des abréviations, par exemple:
+Markdown Extra allows you to specify abbreviations, for example:
 
-*[bac]: baccalauréat
-*[HTML]: Hypertext Markup Language
+* [bac]: Bachelor's degree
+* [HTML]: Hypertext Markup Language
 
-Toutes les occurrences de «bac» et «HTML» trouvées dans le texte seront marquées pour permettre l'affichage de la définition lors du passage du curseur.
+All occurrences of "bin" and "HTML" found in the text will be marked to allow display of the definition as the cursor moves.
 
-Voici maintenant une phrase contenant un lien vers une note de bas de page[^1].
+Here is a sentence that contains a link to a footnote [^1].
 
-Les tableaux sont également supportés:
+Tables are also supported:
 
-| Titre de tableau 1 | Titre de tableau 2 |
-| ------------------ | ------------------ |
-| Cellule            | Cellule            |
-| Cellule            | Cellule            |
+| Table title 1 | Table title 2 |
+| ------------- | ------------- |
+| Cell          | Cell          |
+| Cell          | Cell          |
 
-La note de bas de page créée un peu plus haut peut être définie n'importe où dans le texte, par exemple ici:
+The footnote created a little higher can be defined anywhere in the text, for example here:
 
-[^1]: Voici la note de bas de page.
+[^1]: Here is the footnote.
 
-Enfin, deux nouveaux caractères peuvent être échappés: le deux-points (\:) et la barre verticale (\|).
+Finally, two new characters can be escaped: the colon (\:) and the vertical bar (\|).
